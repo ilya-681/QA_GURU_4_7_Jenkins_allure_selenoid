@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,12 +20,14 @@ public class simpleTests {
     @Test
     @DisplayName("Positive hamcrest test")
     void successHamcrestTest() {
-        assertThat(true, is(true));
+        step("Assert that true is true", () ->
+                assertThat(true, is(true)));
     }
 
     @Test
     @DisplayName("Negative hamcrest test")
     void negativeHamcrestTest() {
-        assertThat(true, is(false));
+        step("Assert that true is false", () ->
+        assertThat(true, is(false)));
     }
 }
