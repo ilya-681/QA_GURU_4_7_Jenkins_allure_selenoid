@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -13,6 +14,7 @@ public class simpleTests {
     }
 
     @Test
+    @Tag("negative")
     void negativeTest() {
         assertEquals(true, false);
     }
@@ -26,6 +28,7 @@ public class simpleTests {
 
     @Test
     @DisplayName("Negative hamcrest test")
+    @Tag("negative")
     void negativeHamcrestTest() {
         step("Assert that true is false", () ->
         assertThat(true, is(false)));

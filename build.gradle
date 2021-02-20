@@ -33,3 +33,9 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
 }
+
+task only_negative_test(type: Test) {
+    useJUnitPlatform {
+        includeTags 'negative'
+    }
+}
