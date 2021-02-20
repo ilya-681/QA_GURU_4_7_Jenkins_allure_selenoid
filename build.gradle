@@ -8,10 +8,20 @@ repositories {
     mavenCentral()
 }
 
+allure {
+    autoconfigure = true
+    version = '2.13.8'  // Latest Allure Version
+
+    useJUnit5 {
+        version = '2.13.8' // Latest Allure Version
+    }
+}
+
 dependencies {
-    testImplementation 'com.codeborne:selenide:5.18.0'
-    implementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'com.codeborne:selenide:5.17.3',
+            'io.qameta.allure:allure-selenide:2.13.8',
+            'org.junit.jupiter:junit-jupiter-api:5.7.0',
+            'org.junit.jupiter:junit-jupiter-params:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
